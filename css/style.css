@@ -1685,6 +1685,15 @@ li {
   margin-right: 121px;
 }
 
+.form .form__group.focus-label input ~ label {
+  font-size: 12px;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
 .form .form__group.focus-img input#date-picker-born,
 .form .form__group.focus-img input#date-picker-reabilt {
   border-color: #b9da26;

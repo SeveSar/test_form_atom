@@ -28,18 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
   myDatePickerBorn.onSelect((date, formatedDate) => {
     inputBorn = formatedDate;
     submit()
-    console.log(inputBorn)
   });
   myDatePickerReabilt.onSelect((date, formatedDate) => {
     inputReabilt = formatedDate;
     submit()
-    console.log(inputReabilt)
   });
-  inputs.forEach(item => {
-    if (item.value.length) {
-      item.focus()
-    }
-  })
   function validate(input, id) {
     if (id === 'phone') {
       if (input.value.length < 17) {
@@ -94,16 +87,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
    // focus
+  //  for (let i = 0; i < inputs.length; i++) {
+  //   if (inputs[i].value.length !== 0) {
+  //     inputs[i].closest('.form__group').classList.add('focus-label')
+  //   }
+  // }
   inputs.forEach(item => {
     item.addEventListener('focus', function(e) {
       const target = e.currentTarget;
       for (let i = 0; i < inputs.length; i++) {
         if (inputs[i] === target) {
-          console.log(1)
           inputs[i].closest('.form__group').classList.add('focus-img');
         } else {
           if (inputs[i].value.length === 0) {
             inputs[i].closest('.form__group').classList.remove('focus-img');
+            // inputs[i].closest('.form__group').classList.remove('focus-label')
           }
         }
       }
@@ -116,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   })
+
 
   // choose-overlay
   const dataChooseInput = document.querySelector('[data-choose]');
