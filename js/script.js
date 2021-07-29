@@ -35,6 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
     submit()
     console.log(inputReabilt)
   });
+  inputs.forEach(item => {
+    if (item.value.length) {
+      item.focus()
+    }
+  })
   function validate(input, id) {
     if (id === 'phone') {
       if (input.value.length < 17) {
@@ -50,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
         input.style.borderColor = 'green';
       }
     }
-
   }
   inputs.forEach(item => {
     item.addEventListener("input", () => {
@@ -145,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const textLabel = listItem.querySelector('label.choose__label').textContent;
       dataChooseInput.value = textLabel
       inputDanger = dataChooseInput.value
-      dataChooseInput.focus;
+      dataChooseInput.focus();
       submit()
       closeModal()
     }
