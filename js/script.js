@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
    // focus
   inputs.forEach(item => {
-    item.value = ''
+    console.log(item.value)
   })
   inputs.forEach(item => {
     item.addEventListener('focus', function(e) {
