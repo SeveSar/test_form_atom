@@ -87,11 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
    // focus
-  //  for (let i = 0; i < inputs.length; i++) {
-  //   if (inputs[i].value.length !== 0) {
-  //     inputs[i].closest('.form__group').classList.add('focus-label')
-  //   }
-  // }
+  inputs.forEach(item => {
+    item.value = ''
+  })
   inputs.forEach(item => {
     item.addEventListener('focus', function(e) {
       const target = e.currentTarget;
